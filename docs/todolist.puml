@@ -1,37 +1,39 @@
 @startuml
 
 class Data{
-    id : int
-    name : string
-    created_at : datetime
-    updated_at : datetime
+    int id
+    string name
+    timeStamp createdAt
+    timeStamp updatedAt
 }
 
 class User{
-    email : string
-    password : string
+    string email
+    string password
 
-    +log_in()
-    +log_out()
-    +add_Task()
-    +delete_Task()
-    +add_Category()
-    +delete_Category()
+    +signIn()
+    +logIn()
+    +logOut()
 }
 
 class Category{
-    user_id : int Foreign_key
+    int userId
 
+    +create()
+    +delete()
     +sort()
 }
 
 class Task{
-    dead_line : datetime
-    priority : float
-    memo : string
-    completed : boolean
-    user_id : int Foreign_key
-    category_id : int Foreign_key
+    datetime deadLine
+    float priority
+    string memo
+    boolean completed
+    int userId
+    int categoryId
+
+    +create()
+    +delete()
 }
 
 Data<|-- User
