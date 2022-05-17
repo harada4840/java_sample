@@ -1,7 +1,7 @@
 @startuml
 
 class Data{
-    int id
+    integer id
     string name
     timeStamp createdAt
     timeStamp updatedAt
@@ -11,17 +11,18 @@ class User{
     string email
     string password
 
-    +signIn()
+    +signUp()
     +logIn()
     +logOut()
 }
 
 class Category{
-    int userId
+    integer userId
 
     +create()
+    +read()
+    +update()
     +delete()
-    +sort()
 }
 
 class Task{
@@ -29,10 +30,12 @@ class Task{
     float priority
     string memo
     boolean completed
-    int userId
-    int categoryId
+    integer userId
+    integer categoryId
 
     +create()
+    +read()
+    +update()
     +delete()
 }
 
