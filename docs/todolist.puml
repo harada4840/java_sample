@@ -1,0 +1,46 @@
+@startuml
+
+class Data{
+    int id
+    string name
+    timeStamp createdAt
+    timeStamp updatedAt
+}
+
+class User{
+    string email
+    string password
+
+    +signIn()
+    +logIn()
+    +logOut()
+}
+
+class Category{
+    int userId
+
+    +create()
+    +delete()
+    +sort()
+}
+
+class Task{
+    datetime deadLine
+    float priority
+    string memo
+    boolean completed
+    int userId
+    int categoryId
+
+    +create()
+    +delete()
+}
+
+Data<|-- User
+Data<|---- Category
+Data<|---- Task
+
+User "1" -- "1..*" Category
+Category "1" -- "0..*" Task
+
+@enduml
