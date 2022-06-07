@@ -32,7 +32,7 @@ public class Repository extends Client {
         ResultSet rs = null;
         try {
             // sql文を用意
-            String sql = "select * from user where email = ?";
+            String sql = "select * from users where email = ?";
             // DBとの接続
             connection = create();
             //
