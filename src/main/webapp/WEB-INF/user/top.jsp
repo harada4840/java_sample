@@ -8,7 +8,8 @@
 <h1>ログイン成功</h1>
 <span class="label label-danger">${Error}</span>
 <h2>${currentUser.name}</h2>
-<h3><a href="/category/insert">カテゴリ新規登録へ</a><h4>
+<h3><a href="/category/insert">カテゴリ新規登録へ</a></h3>
+<h3><a href="/task/insert">タスク新規登録へ</a></h3>
 <h4><a href="/user/logout">ログアウト</a></h4>
 </body>
 </html>
