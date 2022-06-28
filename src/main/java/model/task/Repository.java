@@ -42,7 +42,7 @@ public class Repository extends Client {
         ResultSet rs = null;
 
         try {
-            String sql = "select * from tasks where user_id = ? order by category_id,`limit`";
+            String sql = "select * from tasks where user_id = ? order by category_id,dead_line";
 
             connection = create();
             stmt = connection.prepareStatement(sql);
@@ -54,11 +54,11 @@ public class Repository extends Client {
                 Task task = new Task(
                         rs.getInt("id"),
                         rs.getString("name"),
-                        rs.getString("description"),
-                        rs.getDate("limit"),
-                        rs.getBoolean("did_it"),
                         null,
                         null,
+                        rs.getDate("dead_line"),
+                        rs.getString("memo"),
+                        rs.getBoolean("completed"),
                         rs.getInt("category_id"),
                         rs.getInt("user_id")
                 );
@@ -72,4 +72,5 @@ public class Repository extends Client {
             close(connection, stmt, rs);
         }
 
+    }
 }
