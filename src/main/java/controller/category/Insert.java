@@ -37,7 +37,6 @@ public class Insert extends HttpServlet {
 
         category.insert();
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/user/top.jsp");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("/task/read");
     }
 }

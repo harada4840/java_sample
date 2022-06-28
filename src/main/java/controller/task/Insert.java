@@ -55,7 +55,6 @@ public class Insert extends HttpServlet {
 
         task.insert();
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/user/top.jsp");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("/task/read");
     }
 }
