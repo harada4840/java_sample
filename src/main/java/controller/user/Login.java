@@ -39,4 +39,12 @@ public class Login extends HttpServlet {
             dispatcher.forward(req, resp);
         }
     }
+
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //文字コード指定
+        req.setCharacterEncoding("UTF-8");
+        //index.jspにフォワード
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/index.jsp");
+        dispatcher.forward(req, resp);
+    }
 }
