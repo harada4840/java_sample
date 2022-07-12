@@ -89,4 +89,10 @@ public class Task extends Default {
         return Repository.indexTasks(user);
     }
 
+    public void update(){ Repository.update(this);}
+
+    public Task search(){
+        Task task = Repository.search(this);
+        return task;
+    }
 }
